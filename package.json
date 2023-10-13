@@ -1,0 +1,30 @@
+{
+  "name": "m3p-frontend-squad3",
+  "version": "1.0.0",
+  "description": "FrontEnd do projeto avaliativo do Modulo 3",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/FullStack-Trindade/M3P-FrontEnd-Squad3.git"
+  },
+  "keywords": [
+    "react",
+    "reactjs",
+    "js",
+    "JavaScript",
+    "frontend",
+    "front-end",
+    "hospital",
+    "clinic",
+    "health"
+  ],
+  "author": "Squad-3",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/FullStack-Trindade/M3P-FrontEnd-Squad3/issues"
+  },
+  "homepage": "https://github.com/FullStack-Trindade/M3P-FrontEnd-Squad3#readme"
+}
