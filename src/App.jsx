@@ -1,13 +1,11 @@
 import './App.css'
-import SidebarComponent from './components/Sidebar/Sidebar.component'
-import LoginPage from './pages/Login/Login.page'
+import PublicRoutes from './routes/PublicRoutes'
 
 function App() {
 
   return (
     <>
-    <SidebarComponent/>
-      <LoginPage />
+    <PublicRoutes />
     </>
   )
 }

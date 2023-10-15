@@ -70,6 +70,10 @@ export const Link = styled.a`
 	text-decoration-line: none;
     position: relative;
 
+	&:hover {
+		cursor: pointer;
+	}
+
 	&::after {
 		content: "";
 		display: block;

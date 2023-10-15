@@ -1,7 +1,10 @@
+import { useNavigate } from "react-router-dom"
 import * as Styled from "./loginComponent.style"
 import { useForm } from "react-hook-form"
 
 export default function LoginComponent() {
+	const navigate = useNavigate()
+
 	const {
 		register,
 		handleSubmit,
@@ -12,6 +15,14 @@ export default function LoginComponent() {
 	const onSubmit = async (data) => {
 		console.log(data)
 		reset()
+	}
+
+	const GoToCadPage = () => {
+		navigate('/cadastro')
+	}
+
+	const GoToForgotPage = () => {
+		navigate('/esqueci')
 	}
 
 	return (
@@ -51,7 +62,8 @@ export default function LoginComponent() {
 				</Styled.InputGroup>
 
 				<Styled.Submit type="submit">Entrar</Styled.Submit>
-				<Styled.Link href="">Gostaria de criar uma conta?</Styled.Link>
+				<Styled.Link onClick={GoToForgotPage}>Esqueci minha senha</Styled.Link>
+				<Styled.Link onClick={GoToCadPage}>Gostaria de criar uma conta?</Styled.Link>
 			</Styled.Form>
 		</>
 	)
