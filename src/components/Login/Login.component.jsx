@@ -11,7 +11,7 @@ export default function LoginComponent() {
 
 	const onSubmit = async (data) => {
 		console.log(data)
-        reset()
+		reset()
 	}
 
 	return (
@@ -51,7 +51,7 @@ export default function LoginComponent() {
 				</Styled.InputGroup>
 
 				<Styled.Submit type="submit">Entrar</Styled.Submit>
-                <Styled.Link href="">Gostaria de criar uma conta?</Styled.Link>
+				<Styled.Link href="">Gostaria de criar uma conta?</Styled.Link>
 			</Styled.Form>
 		</>
 	)
