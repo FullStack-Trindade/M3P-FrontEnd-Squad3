@@ -1,4 +1,4 @@
-import LoginComponent from '../../components/Login.component'
+import LoginComponent from '../../components/Login/Login.component'
 import * as Style from './LoginPage.style'
 
 export default function LoginPage() {
