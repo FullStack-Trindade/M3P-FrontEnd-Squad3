@@ -1,3 +1,5 @@
+import { useEffect } from "react"
+import { AuthService } from "../../services/Auth.service"
 import { useNavigate } from "react-router-dom"
 import * as Styled from "./loginComponent.style"
 import { useForm } from "react-hook-form"
@@ -13,9 +15,27 @@ export default function LoginComponent() {
 	} = useForm()
 
 	const onSubmit = async (data) => {
-		console.log(data)
-		reset()
+		console.log("submit")
+		await AuthService.Login(data).then(async (res) => {
+			const response = await res.json()
+			console.log(response.mensagem)
+
+			if (res.status === 200) {
+				// colocar o token no localStorage
+				AuthService.SetToken("logado")
+			}
+		})
 	}
+
+	useEffect(() => {
+		const asyncFn = async () => {
+			await AuthService.GetToken(async (res) => {
+				console.log('res', res)
+				if (res === "logado") alert('logado')
+			})
+		}
+		asyncFn()
+	}, [])
 
 	const GoToCadPage = () => {
 		navigate('/cadastro')
@@ -44,11 +64,11 @@ export default function LoginComponent() {
 					)}
 				</Styled.InputGroup>
 				<Styled.InputGroup>
-					<Styled.Label htmlFor="password">Senha</Styled.Label>
+					<Styled.Label htmlFor="senha">Senha</Styled.Label>
 					<Styled.Input
 						type="password"
 						placeholder="Digite a senha"
-						{...register("password", {
+						{...register("senha", {
 							required: "Senha é obrigatória",
 							minLength: {
 								value: 6,
@@ -56,8 +76,8 @@ export default function LoginComponent() {
 							},
 						})}
 					/>
-					{errors.password && (
-						<Styled.Small>{errors.password.message}</Styled.Small>
+					{errors.senha && (
+						<Styled.Small>{errors.senha.message}</Styled.Small>
 					)}
 				</Styled.InputGroup>
 
